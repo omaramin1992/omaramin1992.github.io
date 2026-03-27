@@ -3,7 +3,7 @@
 
 
     /* =============== Page pre-loader =============== */
-    $(window).load(function(){
+    $(window).on('load', function(){
         $('#page-loader').fadeOut(400);
 
         $('#intro').addClass('animated fadeInDown');
