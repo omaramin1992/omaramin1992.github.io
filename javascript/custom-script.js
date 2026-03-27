@@ -9,8 +9,8 @@
         $('#intro').addClass('animated fadeInDown');
         $('#intro-div').addClass('animated fadeInUp');
         $('#profile').addClass('animated zoomIn');
-		
-		
+
+
 		/* =============== Portfolio Filterizr Initialize =============== */
 		$(function() {
 			//Initialize filterizr with default options
@@ -21,7 +21,7 @@
 				$(this).addClass('active-cat');
 			});
 		});
-		
+
     });
 
 
@@ -190,9 +190,16 @@
         /* =============== Back To Top =============== */
         var offset = 300,
             scroll_top_duration = 700,
-            $back_to_top = $('.back-to-top');
+            $back_to_top = $('.back-to-top'),
+            ticking = false;
         $(window).scroll(function(){
-            ( $(this).scrollTop() > offset ) ? $back_to_top.addClass('back-to-top-is-visible') : $back_to_top.removeClass('back-to-top-is-visible');
+            if (!ticking) {
+                window.requestAnimationFrame(function() {
+                    ( $(window).scrollTop() > offset ) ? $back_to_top.addClass('back-to-top-is-visible') : $back_to_top.removeClass('back-to-top-is-visible');
+                    ticking = false;
+                });
+                ticking = true;
+            }
         });
 
         //smooth scroll to top --->>> Optional
@@ -246,12 +253,12 @@
                     $("#submit").removeAttr('disabled', 'disabled'); // Enable submit button
                 });
         });
-        
+
     });
 
 
-    
-    
+
+
 
 
 })(jQuery);
