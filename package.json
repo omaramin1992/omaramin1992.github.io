@@ -1,0 +1,28 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/omaramin1992/omaramin1992.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/omaramin1992/omaramin1992.github.io/issues"
+  },
+  "homepage": "https://github.com/omaramin1992/omaramin1992.github.io#readme",
+  "devDependencies": {
+    "jest": "^30.3.0",
+    "jest-environment-jsdom": "^30.3.0",
+    "jquery": "^4.0.0",
+    "jsdom": "^29.0.1",
+    "jsdom-global": "^3.0.2"
+  }
+}
