@@ -9,8 +9,8 @@
         $('#intro').addClass('animated fadeInDown');
         $('#intro-div').addClass('animated fadeInUp');
         $('#profile').addClass('animated zoomIn');
-		
-		
+
+
 		/* =============== Portfolio Filterizr Initialize =============== */
 		$(function() {
 			//Initialize filterizr with default options
@@ -21,7 +21,7 @@
 				$(this).addClass('active-cat');
 			});
 		});
-		
+
     });
 
 
@@ -94,53 +94,10 @@
 
         /* =============== Achievement toggle button =============== */
 
-        $( "#btn-1" ).on('click', function() {
-            $("#content-1").slideToggle();
+        $('[id^="btn-"]').on('click', function() {
+            var idSuffix = $(this).attr('id').split('-')[1];
+            $('#content-' + idSuffix).slideToggle();
         });
-
-        $( "#btn-2" ).on('click', function() {
-            $("#content-2").slideToggle();
-        });
-
-        $( "#btn-3" ).on('click', function() {
-            $("#content-3").slideToggle();
-        });
-
-        $( "#btn-4" ).on('click', function() {
-            $("#content-4").slideToggle();
-        });
-
-        $( "#btn-5" ).on('click', function() {
-            $("#content-5").slideToggle();
-        });
-
-        $( "#btn-6" ).on('click', function() {
-            $("#content-6").slideToggle();
-        });
-        $( "#btn-7" ).on('click', function() {
-            $("#content-7").slideToggle();
-        });
-
-        $( "#btn-8" ).on('click', function() {
-            $("#content-8").slideToggle();
-        });
-
-        $( "#btn-9" ).on('click', function() {
-            $("#content-9").slideToggle();
-        });
-        $( "#btn-10" ).on('click', function() {
-            $("#content-10").slideToggle();
-        });
-
-        $( "#btn-11" ).on('click', function() {
-            $("#content-11").slideToggle();
-        });
-
-        $( "#btn-12" ).on('click', function() {
-            $("#content-12").slideToggle();
-        });
-
-
 
         /* =============== Client Swiper Initialize =============== */
         var clientSwiper = new Swiper ('#client-slider', {
@@ -246,12 +203,12 @@
                     $("#submit").removeAttr('disabled', 'disabled'); // Enable submit button
                 });
         });
-        
+
     });
 
 
-    
-    
+
+
 
 
 })(jQuery);
