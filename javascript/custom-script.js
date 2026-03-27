@@ -227,10 +227,6 @@
                     // After 3 seconds, remove the show class from DIV
                     setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
 
-                    $("form#contact-form")[0].reset();
-                    Materialize.updateTextFields(); // Rest floating labels
-                    $("#submit").removeAttr('disabled', 'disabled'); // Enable submit button
-
                 })
                 .fail(function () {
 
@@ -241,9 +237,12 @@
                     // After 3 seconds, remove the show class from DIV
                     setTimeout(function(){ y.className = y.className.replace("show", ""); }, 3000);
 
+                })
+                .always(function () {
+
                     $("form#contact-form")[0].reset();
                     Materialize.updateTextFields(); // Rest floating labels
-                    $("#submit").removeAttr('disabled', 'disabled'); // Enable submit button
+                    $("#submit").removeAttr('disabled'); // Enable submit button
                 });
         });
         
