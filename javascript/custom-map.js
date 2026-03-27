@@ -211,28 +211,31 @@
         });
 
         //add custom buttons for the zoom-in/zoom-out on the map
-        function CustomZoomControl(controlDiv, map) {
+        window.CustomZoomControl = function(controlDiv, map) {
             //grap the zoom elements from the DOM and insert them in the map
-            var controlUIzoomIn= document.getElementById('cd-zoom-in'),
-                controlUIzoomOut= document.getElementById('cd-zoom-out');
-            controlDiv.appendChild(controlUIzoomIn);
-            controlDiv.appendChild(controlUIzoomOut);
+            var controlUIzoomIn= document.getElementById("cd-zoom-in"),
+                controlUIzoomOut= document.getElementById("cd-zoom-out");
+            if (controlUIzoomIn && controlUIzoomOut) {
+                controlDiv.appendChild(controlUIzoomIn);
+                controlDiv.appendChild(controlUIzoomOut);
 
-            // Setup the click event listeners and zoom-in or out according to the clicked element
-            google.maps.event.addDomListener(controlUIzoomIn, 'click', function() {
-                map.setZoom(map.getZoom()+1)
-            });
-            google.maps.event.addDomListener(controlUIzoomOut, 'click', function() {
-                map.setZoom(map.getZoom()-1)
-            });
+                // Setup the click event listeners and zoom-in or out according to the clicked element
+                google.maps.event.addDomListener(controlUIzoomIn, "click", function() {
+                    map.setZoom(map.getZoom()+1)
+                });
+                google.maps.event.addDomListener(controlUIzoomOut, "click", function() {
+                    map.setZoom(map.getZoom()-1)
+                });
+            }
         }
 
-        var zoomControlDiv = document.createElement('div');
-        var zoomControl = new CustomZoomControl(zoomControlDiv, map);
+        var zoomControlDiv = document.createElement("div");
+        var zoomControl = new window.CustomZoomControl(zoomControlDiv, map);
+
 
         //insert the zoom div on the top left of the map
         map.controls[google.maps.ControlPosition.LEFT_TOP].push(zoomControlDiv);
 
     });
 
-})(jQuery);
+})(typeof jQuery !== "undefined" ? jQuery : global.jQuery);
