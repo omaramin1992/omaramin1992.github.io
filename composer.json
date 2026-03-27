@@ -1,0 +1,16 @@
+{
+    "name": "test/portfolio",
+    "description": "Test",
+    "type": "project",
+    "require": {
+        "php": ">=7.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    },
+    "authors": [
+        {
+            "name": "Test"
+        }
+    ]
+}
