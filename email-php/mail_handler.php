@@ -3,9 +3,9 @@
 /* Replace with your email address here */
 $mailto  = 'omaramin.1992@gmail.com';
 
-$name     	= strip_tags($_POST['name']);
+$name     	= str_replace(["\r", "\n"], '', strip_tags($_POST['name']));
 $sub     	= strip_tags($_POST['subject']);
-$email      = strip_tags($_POST['email']);
+$email      = str_replace(["\r", "\n"], '', strip_tags($_POST['email']));
 $message    = strip_tags($_POST['message']);
 
 $subject = "From Decent Material CV | Resume";
